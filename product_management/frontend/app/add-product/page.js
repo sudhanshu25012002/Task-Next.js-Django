@@ -10,6 +10,13 @@ export default function AddProduct() {
     const [image, setImage] = useState(null);
     const router = useRouter();
 
+    useEffect(() => {
+        const token = localStorage.getItem('accessToken');
+        if (!token) {
+            router.push('/login');
+        }
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('accessToken');

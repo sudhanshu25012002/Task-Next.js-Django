@@ -13,6 +13,13 @@ export default function EditProduct() {
     const router = useRouter();
 
     useEffect(() => {
+        const token = localStorage.getItem('accessToken');
+        if (!token) {
+            router.push('/login');
+        }
+    }, []);
+
+    useEffect(() => {
         const fetchProduct = async () => {
             const token = localStorage.getItem('accessToken');
 

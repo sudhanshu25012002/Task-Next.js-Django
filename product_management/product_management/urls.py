@@ -23,8 +23,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from rest_framework.routers import DefaultRouter
-from .views import ProductViewSet
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
